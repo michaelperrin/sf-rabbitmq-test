@@ -10,5 +10,5 @@ services:
 
   rabbitmq:
     image: rabbitmq:3.6-management
-    # environment:
-    #   RABBITMQ_DEFAULT_VHOST: rabbitmq
+    ports:
+      - 15672:15672
