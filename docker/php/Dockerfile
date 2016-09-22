@@ -10,11 +10,9 @@ RUN apt-get update \
 RUN docker-php-ext-install \
         bcmath \
         mbstring \
-        sockets \
     && docker-php-ext-enable \
         bcmath \
-        mbstring \
-        sockets
+        mbstring
 
 # Composer
 RUN php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
