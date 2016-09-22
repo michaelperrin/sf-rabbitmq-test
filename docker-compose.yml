@@ -1,0 +1,14 @@
+version: '2'
+services:
+  php:
+    build: ./docker/php/
+    links:
+      - rabbitmq
+    volumes:
+      - ./src:/var/www/rabbitmq-test
+    working_dir: /var/www/rabbitmq-test
+
+  rabbitmq:
+    image: rabbitmq:3.6-management
+    # environment:
+    #   RABBITMQ_DEFAULT_VHOST: rabbitmq
